@@ -403,11 +403,10 @@ finish_glance <- function(ret, x) {
 confint_tidy <- function(x, conf.level = .95, func = stats::confint, ...) {
   # avoid "Waiting for profiling to be done..." message for some models
   ci <- suppressMessages(func(x, level = conf.level, ...))
-  
-  # protect against confidence intervals returned as named vectors
   if (is.null(dim(ci))) {
     ci <- matrix(ci, nrow = 1)
   }
+ 
   
   # remove rows that are all NA. *not the same* as na.omit which checks
   # for any NA.
