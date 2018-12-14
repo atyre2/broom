@@ -11,3 +11,6 @@
 ^_pkgdown\.yml$
 ^README\.Rmd$
 ^\.github$
+^docs$
+^data-raw$
+^\.httr-oauth$
